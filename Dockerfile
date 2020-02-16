@@ -1,9 +1,3 @@
-
-RUN git clone git://git.qemu.org/qemu.git  
-RUN cd qemu  
-RUN ./configure --target-list=arm-linux-user --static
-RUN make  
-
 FROM linuxserver/nzbget:arm32v7-latest
 
 COPY qemu-arm-static /usr/bin/qemu-arm-static
