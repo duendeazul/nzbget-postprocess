@@ -31,7 +31,7 @@ RUN pip install qtfaststart
 RUN pip install mutagen
 RUN pip install tmdbsimple
 RUN pip install stevedore
-RUN pip install dateutil
+RUN pip install python-dateutil
 
 #Set MP4_Automator script settings in NZBGet settings
 RUN echo 'NZBGetPostProcess.py:MP4_FOLDER=/scripts/MP4_Automator' >> /config/nzbget.conf
