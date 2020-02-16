@@ -1,5 +1,9 @@
 FROM linuxserver/nzbget:arm32v7-latest
-COPY qemu-arm-static /usr/bin
+git clone git://git.qemu.org/qemu.git  
+cd qemu  
+./configure --target-list=arm-linux-user --static
+make  
+COPY qemu/arm-linux-user/qemu-arm /usr/bin
 LABEL maintainer="duendeazul"
 
 
