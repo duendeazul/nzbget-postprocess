@@ -1,9 +1,10 @@
 FROM linuxserver/nzbget:arm32v7-latest
-git clone git://git.qemu.org/qemu.git  
-cd qemu  
-./configure --target-list=arm-linux-user --static
-make  
-COPY qemu/arm-linux-user/qemu-arm /usr/bin
+RUN git clone git://git.qemu.org/qemu.git  
+RUN cd qemu  
+RUN ./configure --target-list=arm-linux-user --static
+RUN make  
+
+COPY qemu-arm-static /usr/bin/qemu-arm-static
 LABEL maintainer="duendeazul"
 
 
@@ -14,7 +15,7 @@ RUN apk add --no-cache git
 
 # Install MP4 Automator
 RUN git clone https://github.com/mdhiggins/sickbeard_mp4_automator.git /scripts/mp4_automator/tmp
-RUn mv /scripts/mp4_automator/tmp/* /scripts/mp4_automator/
+RUN mv /scripts/mp4_automator/tmp/* /scripts/mp4_automator/
 RUN apk add --no-cache \
   py-setuptools \
   py-pip \
