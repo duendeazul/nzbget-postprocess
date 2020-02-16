@@ -10,7 +10,7 @@ VOLUME /scripts
 RUN apk add --no-cache git
 
 # Install MP4 Automator
-RUN git clone https://github.com/mdhiggins/sickbeard_mp4_automator.git /scripts/mp4_automator/tmp
+RUN git clone https://github.com/mdhiggins/sickbeard_mp4_automator.git /scripts/mp4_automator
 RUN apk add --no-cache \
   py-setuptools \
   py-pip \
