@@ -33,6 +33,10 @@ RUN pip install tmdbsimple
 RUN pip install stevedore
 RUN pip install python-dateutil
 
+# As per https://github.com/mdhiggins/sickbeard_mp4_automator/issues/643
+ONBUILD RUN pip uninstall stevedore
+ONBUILD RUN pip install stevedore==1.19.1
+
 #Set MP4_Automator script settings in NZBGet settings
 RUN echo 'NZBGetPostProcess.py:MP4_FOLDER=/scripts/MP4_Automator' >> /config/nzbget.conf
 RUN echo 'NZBGetPostProcess.py:SHOULDCONVERT=True' >> /config/nzbget.conf
