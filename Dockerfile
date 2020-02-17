@@ -25,8 +25,8 @@ RUN pip install requests
 RUN pip install requests[security]
 RUN pip install requests-cache
 RUN pip install babelfish
-RUN pip install "guessit<2"
-RUN pip install "subliminal<2"
+RUN pip install guessit
+RUN pip install subliminal
 RUN pip install qtfaststart
 RUN pip install mutagen
 RUN pip install tmdbsimple
