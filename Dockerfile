@@ -5,6 +5,8 @@ LABEL maintainer="duendeazul"
 
 
 VOLUME /scripts
+VOLUME /var/log/sickbeard_mp4_automator/
+
 
 # Install Git
 RUN apk add --no-cache git
