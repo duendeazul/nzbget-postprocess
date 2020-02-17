@@ -41,8 +41,9 @@ ONBUILD RUN pip install stevedore==1.19.1
 RUN echo 'NZBGetPostProcess.py:MP4_FOLDER=/scripts/MP4_Automator' >> /config/nzbget.conf
 RUN echo 'NZBGetPostProcess.py:SHOULDCONVERT=True' >> /config/nzbget.conf
 
-#Set script file permissions
+#Set script and log file permissions
 RUN chmod 777 -R /scripts
+RUN chmod 777 -R /var/log/sickbeard_mp4_automator/
 
 #Set script directory setting in NZBGet
 #RUN /app/nzbget -o ScriptDir=/app/scripts,${MP4Automator_dir},/scripts/nzbToMedia
