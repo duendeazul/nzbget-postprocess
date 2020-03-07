@@ -15,8 +15,8 @@ RUN apk add --no-cache git
 RUN git clone https://github.com/mdhiggins/sickbeard_mp4_automator.git /scripts/mp4_automator
 
 # create logging directory
-RUN mkdir /var/log/sickbeard_mp4_automator && \
-  touch /var/log/sickbeard_mp4_automator/index.log && \
+# RUN mkdir /var/log/sickbeard_mp4_automator && \
+ RUN touch /var/log/sickbeard_mp4_automator/index.log && \
   chgrp -R users /var/log/sickbeard_mp4_automator && \
   chmod -R g+w /var/log/sickbeard_mp4_automator && \
 
