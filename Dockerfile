@@ -58,4 +58,4 @@ RUN chmod 777 -R /var/log/sickbeard_mp4_automator/
 #RUN /app/nzbget -o ScriptDir=/app/scripts,${MP4Automator_dir},/scripts/nzbToMedia
 #ONBUILD RUN sed -i 's/^ScriptDir=.*/ScriptDir=\/app\/scripts;\/scripts\/MP4_Automator;\/scripts\/nzbToMedia/' /config/nzbget.conf
 
-#VOLUME ["/scripts/mp4_automator/autoProcess.ini"]
+VOLUME ["/scripts/mp4_automator/autoProcess.ini"]
